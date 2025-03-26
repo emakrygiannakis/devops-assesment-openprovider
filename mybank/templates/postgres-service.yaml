@@ -8,5 +8,5 @@ spec:
     app: postgres
   ports:
     - protocol: TCP
-      port: {{ .Values.postgres.port | default 1234 }}
-      targetPort: {{ .Values.postgres.port | default 1234 }}
+      port: {{ .Values.postgres.port }}
+      targetPort: {{ .Values.postgres.port }}

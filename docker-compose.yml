@@ -24,7 +24,7 @@ services:
     depends_on:
       - postgres
     networks:
-      - mybanknetwork # Add to network
+      - mybanknetwork
 
 networks:
   mybanknetwork:

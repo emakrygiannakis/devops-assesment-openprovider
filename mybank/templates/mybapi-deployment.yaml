@@ -12,8 +12,19 @@ spec:
     metadata:
       labels:
         app: mybapi
-        role: api
     spec:
+      nodeSelector:
+        {{- toYaml .Values.mybapi.nodeSelector | nindent 8 }}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - mybapi
+              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: mybapi
           image: "{{ .Values.mybapi.image }}"

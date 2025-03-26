@@ -4,6 +4,8 @@ mybapi:
   port: 8080
   bankPostgresHost: postgres:5432
   replicaCount: 5  
+  nodeSelector:
+    role: api
 
 postgres:
   image: postgres:12
