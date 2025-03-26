@@ -1,0 +1,16 @@
+---
+mybapi:
+  image: mybapi:latest
+  port: 8080
+  bankPostgresHost: postgres:5432
+  replicaCount: 5  
+
+postgres:
+  image: postgres:12
+  database: bdb
+  user: test
+  password: test
+  persistence:
+    enabled: true
+    size: 8Gi
+  port: 5432

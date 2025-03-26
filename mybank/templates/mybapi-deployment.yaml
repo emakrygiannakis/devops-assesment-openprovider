@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mybapi
+spec:
+  replicas: {{ .Values.mybapi.replicaCount }}
+  selector:
+    matchLabels:
+      app: mybapi
+  template:
+    metadata:
+      labels:
+        app: mybapi
+        role: api
+    spec:
+      containers:
+        - name: mybapi
+          image: "{{ .Values.mybapi.image }}"
+          imagePullPolicy: Never
+          ports:
+            - containerPort: {{ .Values.mybapi.port }}
+          env:
+            - name: BANK_POSTGRES_HOST
+              value: "{{ .Values.mybapi.bankPostgresHost }}"
