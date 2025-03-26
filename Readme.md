@@ -1,5 +1,7 @@
 # Transaction API
 
+Answers can be seen [here](https://github.com/emakrygiannakis/devops-assesment-openprovider?tab=readme-ov-file#assessment-tasks)
+
 ## Description
 
 This repository contains a simple bank transaction API, developed in Go using the following technologies:
